@@ -1,5 +1,3 @@
-# Swagger
-## What is Swagger
 
 Swagger is a set of tools designed to facilitate the design and documentation of REST APIs according to the 
 [Open API Specifications.](https://www.openapis.org/about) 
