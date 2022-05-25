@@ -1,5 +1,5 @@
 ---
-title: A Guide to Best Practice With NodeJS
+title: Efficient Node
 geekdocNav: false
 geekdocBreadcrumb: false
 ---

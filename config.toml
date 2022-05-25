@@ -1,7 +1,7 @@
 languageCode = 'en-us'
 # baseURL = "http://localhost"
-baseURL = "https://dwtechs.github.io/Node-best-practice/"
-title = "Node Best Practice"
+baseURL = "https://dwtechs.github.io/Efficient Node/"
+title = "Efficient Node"
 theme = "hugo-geekdoc"
 
 pluralizeListTitles = false
