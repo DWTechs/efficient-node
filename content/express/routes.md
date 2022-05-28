@@ -4,21 +4,21 @@
 
 Routing refers to how an application’s endpoints (URIs) respond to client requests.
 
-You define routing using methods of the Express app object that correspond to HTTP methods; for example, app.get() to handle GET requests and app.post to handle POST requests. You can also use app.all() to handle all HTTP methods and app.use() to specify middleware as the callback function.
+You define routing using methods of the Express app object that correspond to HTTP methods; for example, app.get() to handle GET requests and app.post() to handle POST requests. You can also use app.use() to specify middleware as the callback function.
 
-These routing methods specify a callback function called when the application receives a request to the specified route (endpoint) and HTTP method. In other words, the application “listens” for requests that match the specified route(s) and method(s), and when it detects a match, it calls the specified callback function.
+These routing methods specify a callback function called when the application receives a request to the specified route and HTTP method. In other words, the application “listens” for requests that match the specified route(s) and method(s), and when it detects a match, it calls the specified callback function.
 
 In fact, the routing methods can have more than one callback function as arguments. With multiple callback functions, it is important to provide next as an argument to the callback function and then call next() within the body of the function to hand off control to the next callback.
 
 Example : 
 
 ```javascript
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express();
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function (req, res) {
-  res.send('hello world')
+  res.send('hello world');
 })
 ```
 
@@ -32,16 +32,16 @@ The following code is an example of routes that are defined for the GET and the 
 ```javascript
 // GET method route
 app.get('/', function (req, res) {
-  res.send('GET request to the homepage')
+  res.send('GET request to the homepage');
 })
 
 // POST method route
 app.post('/', function (req, res) {
-  res.send('POST request to the homepage')
+  res.send('POST request to the homepage');
 })
 ```
 
-Express supports methods that correspond to all HTTP request methods: get, post, and so on. For a full list, see [app.METHOD](https://expressjs.com/en/4x/api.html#app.METHOD).
+Express supports methods that correspond to all HTTP request methods: get, post, and so on. For a full list, see [REST API documentation](rest/operations).
 
 There is a special routing method, app.all(), used to load middleware functions at a path for all HTTP request methods. For example, the following handler is executed for requests to the route “/secret” whether using GET, POST, PUT, DELETE, or any other HTTP request method supported in the http module.
 
@@ -70,21 +70,21 @@ Here are some examples of route paths based on strings.
 This route path will match requests to the root route, /.
 ```javascript
 app.get('/', function (req, res) {
-  res.send('root')
+  res.send('root');
 })
 ```
 
 This route path will match requests to /about.
 ```javascript
 app.get('/about', function (req, res) {
-  res.send('about')
+  res.send('about');
 })
 ```
 
 This route path will match requests to /random.text.
 ```javascript
 app.get('/random.text', function (req, res) {
-  res.send('random.text')
+  res.send('random.text');
 })
 ```
 
@@ -93,28 +93,28 @@ Here are some examples of route paths based on string patterns.
 This route path will match acd and abcd.
 ```javascript
 app.get('/ab?cd', function (req, res) {
-  res.send('ab?cd')
+  res.send('ab?cd');
 })
 ```
 
 This route path will match abcd, abbcd, abbbcd, and so on.
 ```javascript
 app.get('/ab+cd', function (req, res) {
-  res.send('ab+cd')
+  res.send('ab+cd');
 })
 ```
 
 This route path will match abcd, abxcd, abRANDOMcd, ab123cd, and so on.
 ```javascript
 app.get('/ab*cd', function (req, res) {
-  res.send('ab*cd')
+  res.send('ab*cd');
 })
 ```
 
 This route path will match /abe and /abcde.
 ```javascript
 app.get('/ab(cd)?e', function (req, res) {
-  res.send('ab(cd)?e')
+  res.send('ab(cd)?e');
 })
 ```
 
@@ -123,7 +123,7 @@ Examples of route paths based on regular expressions:
 This route path will match anything with an “a” in it.
 ```javascript
 app.get(/a/, function (req, res) {
-  res.send('/a/')
+  res.send('/a/');
 })
 ```
 
@@ -134,7 +134,6 @@ app.get(/.*fly$/, function (req, res) {
 })
 ```
 
-
 ## Route parameters
 
 Route parameters are named URL segments that are used to capture the values specified at their position in the URL. The captured values are populated in the req.params object, with the name of the route parameter specified in the path as their respective keys.
@@ -144,9 +143,11 @@ Request URL: http://localhost:3000/users/34/books/8989
 req.params: { "userId": "34", "bookId": "8989" }
 
 To define routes with route parameters, simply specify the route parameters in the path of the route as shown below.
+You can get the parameters in req.params variable.
+
 ```javascript
 app.get('/users/:userId/books/:bookId', function (req, res) {
-  res.send(req.params)
+  res.send(req.params);
 })
 ```
 
@@ -170,7 +171,7 @@ req.params: {"userId": "42"}
 
 Because the regular expression is usually part of a literal string, be sure to escape any \ characters with an additional backslash, for example \\d+.
 
-In Express 4.x, the * character in regular expressions is not interpreted in the usual way. As a workaround, use {0,} instead of *. This will likely be fixed in Express 5.
+*In Express 4.x, the * character in regular expressions is not interpreted in the usual way. As a workaround, use {0,} instead of *. This will likely be fixed in Express 5.*
 
 
 ## Route handlers
@@ -180,58 +181,61 @@ You can provide multiple callback functions that behave like middleware to handl
 Route handlers can be in the form of a function, an array of functions, or combinations of both, as shown in the following examples.
 
 A single callback function can handle a route. For example:
+
 ```javascript
 app.get('/example/a', function (req, res) {
-  res.send('Hello from A!')
+  res.send('Hello from A!');
 })
 ```
 
 More than one callback function can handle a route (make sure you specify the next object). For example:
+
 ```javascript
 app.get('/example/b', function (req, res, next) {
-  console.log('the response will be sent by the next function ...')
+  console.log('the response will be sent by the next function ...');
   next()
 }, function (req, res) {
-  res.send('Hello from B!')
+  res.send('Hello from B!');
 })
 ```
 
 An array of callback functions can handle a route. For example:
 ```javascript
 var cb0 = function (req, res, next) {
-  console.log('CB0')
-  next()
+  console.log('CB0');
+  next();
 }
 
 var cb1 = function (req, res, next) {
-  console.log('CB1')
-  next()
+  console.log('CB1');
+  next();
 }
 
 var cb2 = function (req, res) {
-  res.send('Hello from C!')
+  res.send('Hello from C!');
 }
 
-app.get('/example/c', [cb0, cb1, cb2])
+app.get('/example/c', [cb0, cb1, cb2]);
 ```
 
 A combination of independent functions and arrays of functions can handle a route. For example:
+
 ```javascript
 var cb0 = function (req, res, next) {
-  console.log('CB0')
-  next()
+  console.log('CB0');
+  next();
 }
 
 var cb1 = function (req, res, next) {
-  console.log('CB1')
-  next()
+  console.log('CB1');
+  next();
 }
 
 app.get('/example/d', [cb0, cb1], function (req, res, next) {
-  console.log('the response will be sent by the next function ...')
-  next()
+  console.log('the response will be sent by the next function ...');
+  next();
 }, function (req, res) {
-  res.send('Hello from D!')
+  res.send('Hello from D!');
 })
 ```
 
@@ -256,19 +260,19 @@ res.sendStatus()    // Set the response status code and send its string represen
 
 ## app.route()
 
-You can create chainable route handlers for a route path by using app.route(). Because the path is specified at a single location, creating modular routes is helpful, as is reducing redundancy and typos. For more information about routes, see: [Router()](https://expressjs.com/en/4x/api.html#router) documentation.
+You can create chainable route handlers for a route path by using app.route(). Because the path is specified at a single location, creating modular routes is helpful, as is reducing redundancy and typos.
 
 Here is an example of chained route handlers that are defined by using app.route().
 ```javascript
 app.route('/book')
   .get(function (req, res) {
-    res.send('Get a random book')
+    res.send('Get a random book');
   })
   .post(function (req, res) {
-    res.send('Add a book')
+    res.send('Add a book');
   })
   .put(function (req, res) {
-    res.send('Update the book')
+    res.send('Update the book');
   })
 ```
 
@@ -280,41 +284,35 @@ Use the express.Router class to create modular, mountable route handlers. A Rout
 The following example creates a router as a module, loads a middleware function in it, defines some routes, and mounts the router module on a path in the main app.
 
 Create a router file named birds.js in the app directory, with the following content:
+
 ```javascript
-var express = require('express')
-var router = express.Router()
+var express = require('express');
+var router = express.Router();
 
 // middleware that is specific to this router
 router.use(function timeLog (req, res, next) {
-  console.log('Time: ', Date.now())
+  console.log('Time: ', Date.now());
   next()
 })
 // define the home page route
 router.get('/', function (req, res) {
-  res.send('Birds home page')
+  res.send('Birds home page');
 })
 // define the about route
 router.get('/about', function (req, res) {
-  res.send('About birds')
+  res.send('About birds');
 })
 
-module.exports = router
+module.exports = router;
 ```
 
 Then, load the router module in the app:
 ```javascript
-var birds = require('./birds')
+var birds = require('./birds');
 
 // ...
 
-app.use('/birds', birds)
+app.use('/birds', birds);
 ```
 
 The app will now be able to handle requests to /birds and /birds/about, as well as call the timeLog middleware function that is specific to the route.
-
-
-## Routing sources :
-
-[https://expressjs.com/en/starter/basic-routing.html](https://expressjs.com/en/starter/basic-routing.html)
-
-[https://expressjs.com/en/guide/routing.html](https://expressjs.com/en/guide/routing.html)
