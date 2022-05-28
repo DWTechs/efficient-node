@@ -1,5 +1,3 @@
-# Swagger
-## What is Swagger
 
 Swagger is a set of tools designed to facilitate the design and documentation of REST APIs according to the 
 [Open API Specifications.](https://www.openapis.org/about) 
@@ -10,7 +8,7 @@ Once the API has been documented this documentation can be made available to oth
 
 Swagger documentation can be written using JSON or YAML.
 
-In the example below we look at installing Swagger inside a NodeJS / TypeScript project.
+In the example below we look at installing Swagger inside a Node.js / TypeScript project.
 
 ## Installation
 
