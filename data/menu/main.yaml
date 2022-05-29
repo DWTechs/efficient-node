@@ -5,6 +5,8 @@ main:
   - name: Express
     ref: "express/"
     sub:
+      - name: Middlewares
+        ref: "express/middlewares"
       - name: "Routes" 
         ref: "express/routes"
       - name: "Controllers" 
