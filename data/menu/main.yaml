@@ -1,9 +1,30 @@
 ---
 main:
-  - name: What is Node
+  - name: What is NodeJS
     ref: "intro"
-  - name: Documentation
+  - name: Express
+    ref: "express/"
     sub:
-      - name: Swagger
-        ref: "Swagger"
-     
+      - name: Middlewares
+        ref: "express/middlewares"
+      - name: "Routes" 
+        ref: "express/routes"
+      - name: "Controllers" 
+        ref: "express/controllers"
+      - name: "Services" 
+        ref: "express/services"
+  - name: Rest API
+    ref: "rest/"
+    sub:
+      - name: "API" 
+        ref: "rest/api"
+      - name: "Design" 
+        ref: "rest/design"
+      - name: "Operations" 
+        ref: "rest/operations"
+      - name: "Versioning" 
+        ref: "rest/versioning"
+  - name: Swagger
+    ref: "swagger"
+  
+  

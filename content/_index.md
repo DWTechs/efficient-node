@@ -1,9 +1,16 @@
 ---
-title: A Guide to Best Practice With NodeJS
+title: Efficient Node
 geekdocNav: false
 geekdocBreadcrumb: false
 ---
 
-NodeJS is a great tool for building backends especially for frontend websites, but like any tool there are some best practices which should be followed to avoid getting into a complete mess. Whilst these are best practices they are not prescriptive and should be considered in the light of the application being built whether to adopt some, all or none of these. 
+## Use Node.js without hassle
+
+Understanding how to use Node.js will give a major boost to your daily work. It is a very powerful tool; And like every tool, it has been created mostly to make you gain time.
+
+But if you and/or your team are not using it properly, Node.js can be a massive waste of time and money.
+
+This guide will teach you **how to Node efficiently**. The simple and most useful way.
+In order to make Node as effortless as possible in your daily work and focus on development of applications.
 
 {{< button relref="/intro" size="large" >}}Getting Started{{< /button >}}

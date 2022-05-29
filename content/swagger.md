@@ -1,5 +1,5 @@
 
-Swagger is a set of tools designed to facilitate the design and documentation of REST APIs according to the 
+Swagger is a set of tools created to facilitate the design and documentation of REST APIs according to the 
 [Open API Specifications.](https://www.openapis.org/about) 
 
 The API can be written first in Swagger using a design first approach or can be used to document an existing API.
@@ -8,15 +8,15 @@ Once the API has been documented this documentation can be made available to oth
 
 Swagger documentation can be written using JSON or YAML.
 
-In the example below we look at installing Swagger inside a NodeJS / TypeScript project.
+In the example below we look at installing Swagger inside a Node.js / TypeScript project.
 
 ## Installation
 
-This install makes use of Swagger-ui-express and swagger-jsdoc, and assumes you already have a basic node project set-up with TypeScript and Express.
+This install makes use of Swagger-ui-express *and swagger-jsdoc*, and assumes you already have a basic node project set-up with Express.
  
  ```
 npm i swagger-ui-express swagger-jsdoc
-npm i --save-dev @types/swagger-jsdoc @types/swagger-ui-express
+// npm i --save-dev @types/swagger-jsdoc @types/swagger-ui-express
  ```
 
 Having installed the above packages the next step is to configure Swagger inside of our application:
@@ -96,9 +96,9 @@ A Swagger document is broken upto into two sections these being:
 
 ### Components
 
-Components is were we define our reusable elements of our API such as schemas, responses, parameters etc more information on these can be found [here](https://swagger.io/docs/specification/components/)
+Components is were we define our reusable elements of our API such as schemas, responses, parameters etc.
 
 ### Paths
 
-Paths is were we document the routes of our API. Here wa describe everything about our route including parameters and all the possible responses that might be returned in a response. Within the paths when defining the properties we can use the "$ref" to reference an element contained within the components section. More detailed information on paths can be found [here](https://swagger.io/docs/specification/paths-and-operations/)
+Paths is were we document the routes of our API. Here we describe everything about our route including parameters and all the possible responses that might be returned in a response. Within the paths when defining the properties we can use the "$ref" to reference an element contained within the components section.
 
