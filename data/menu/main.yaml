@@ -13,6 +13,8 @@ main:
         ref: "express/controllers"
       - name: "Services" 
         ref: "express/services"
+      - name: "Error Handling"
+        ref: "express/error-handling"
   - name: Rest API
     ref: "rest/"
     sub:
