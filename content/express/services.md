@@ -31,31 +31,34 @@ async function getBlogs(req, res, next) {
 ```
 
 Example in practice
+
+Router File
+
 ```javascript
 
-require('userController');
+const userController = require('userController');
 
 router.get('/users', userController.getUsers);
 
-# Controller
+```
 
-require('userService');
+Controller File
 
-function userController() {
+```javascript
+const userService = require('userService');
 
   async function getUsers(req: Request, res: Response) {
     const users = await userService.getUsers();
     res.status(200).json(users);
   }
 
-  return { getUsers };
-}
+  export = { getUsers };
+```
 
-# Service - logic simplified for brevity, there maybe some setup logic / error handling etc
+Service File - logic simplified for brevity, there maybe some setup logic / error handling etc
+```javascript
 
-require('database');
-
-function userService() {
+const database = require('database');
 
   async function getUsers() {
     return await database.getUsers();
@@ -69,7 +72,5 @@ function userService() {
     }
   }
 
-  return { getUsers, updateUser };
-}
-
+export = { getUsers, updateUser };
 ```
