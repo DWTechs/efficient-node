@@ -1,7 +1,7 @@
-# Services
 
 In an MVC pattern the service is part of the model.
 It mainly manages the data of the application. 
+They live inside the models/ folder.
 
 For example it will handle the call to the database and return it to the controller.
 

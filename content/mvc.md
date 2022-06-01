@@ -1,8 +1,6 @@
 ---
-title: MVC for REST APIs
+title: What is the MVC pattern
 ---
-
-# What is the MVC pattern
 
 MVC is a paradigm concerned with how object oriented systems could have UIs.
 It helps break up the code into separate components. This way, it is much easier to manage and make changes to either side without them interfering with each other.
@@ -41,6 +39,5 @@ Meaning that it is not just the data model. It includes all the business logic (
 
 In a micro service architecture 'routes' and 'controllers' folders should not be too crowded, So no subfolders should be needed.
 If you feel that you need one then maybe it is time think of creating another micro service.
-
 
 You will learn more on how to separate your code in the [express chapter](/express/).

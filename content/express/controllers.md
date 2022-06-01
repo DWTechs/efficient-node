@@ -1,6 +1,4 @@
 
-# Controllers
-
 A controller is responsible for controlling the way that a user interacts with an MVC application. It contains the flow control logic and determines what response to send back to a user when a user makes a request.
 
 As seen in the previous chapter, for every route you define a route-handler callback function (ie: a middleware) that will contain the code to compute a proper response.

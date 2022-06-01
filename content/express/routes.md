@@ -1,7 +1,5 @@
 
 
-# Routing
-
 Routing refers to how an application’s endpoints (URIs) respond to client requests.
 
 You define routing using methods of the Express app object that correspond to HTTP methods; for example, app.get() to handle GET requests and app.post() to handle POST requests. You can also use app.use() to specify middleware as the callback function.

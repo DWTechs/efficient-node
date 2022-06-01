@@ -2,6 +2,8 @@
 main:
   - name: What is NodeJS
     ref: "intro"
+  - name: MVC Pattern
+    ref: "mvc"
   - name: Express
     ref: "express/"
     sub:
@@ -26,6 +28,8 @@ main:
         ref: "rest/operations"
       - name: "Versioning" 
         ref: "rest/versioning"
+  - name: Microservices
+    ref: "microservices"
   - name: Swagger
     ref: "swagger"
   

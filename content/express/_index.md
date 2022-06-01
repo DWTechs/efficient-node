@@ -1,7 +1,8 @@
 ---
-title: Express
+title: What is Express
 ---
 
-# What is Express
+Express is a routing and middleware web framework used for web APIs.
+It is minimalist and unopinionated.
 
-Express is a routing and middleware web framework that has minimal functionality of its own: An Express application is essentially a series of middleware function calls.
+An Express application is essentially a series of middleware function calls.
