@@ -6,9 +6,8 @@ For example:
 Using middleware Middleware functions can perform the following tasks:
 Execute any code. Make changes to the request and the response objects. End the request-response cycle.</description></item><item><title/><link>https://dwtechs.github.io/efficient-node/express/routes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dwtechs.github.io/efficient-node/express/routes/</guid><description>Routing refers to how an application’s endpoints (URIs) respond to client requests.
 You define routing using methods of the Express app object that correspond to HTTP methods; for example, app.get() to handle GET requests and app.post() to handle POST requests. You can also use app.use() to specify middleware as the callback function.
-These routing methods specify a callback function called when the application receives a request to the specified route and HTTP method.</description></item><item><title/><link>https://dwtechs.github.io/efficient-node/express/services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dwtechs.github.io/efficient-node/express/services/</guid><description>In an MVC pattern the service is part of the model. It mainly manages the data of the application. They live inside the models/ folder.
+These routing methods specify a callback function called when the application receives a request to the specified route and HTTP method.</description></item><item><title/><link>https://dwtechs.github.io/efficient-node/express/services/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://dwtechs.github.io/efficient-node/express/services/</guid><description>In an MVC pattern the service is part of the model. It mainly manages the data of the application. Services live inside the models/ folder.
 For example it will handle the call to the database and return it to the controller.
-Route file example :
-const express = require(&amp;rsquo;express&amp;rsquo;); const router = express.Router(); const controller = require(&amp;rsquo;../controllers/&amp;rsquo;);
-router.get(&amp;rsquo;/&amp;rsquo;, controller.); Controller file example :
-async function getBlogs(req, res, next) { //call to service res.</description></item></channel></rss>
+For example it will handle the call to the database and return the result(s) back to the controller.
+Route file example outline:
+const express = require(&amp;#39;express&amp;#39;); const router = express.</description></item></channel></rss>
