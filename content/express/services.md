@@ -1,9 +1,9 @@
 # Services
 
-In an MVC patterne the service is part of the model.
+In an MVC pattern the service is part of the model.
 It mainly manages the data of the application. 
 
-For example it will handle the call to the database and return it to tjhe controller.
+For example it will handle the call to the database and return it to the controller.
 
 
 Route file example :
