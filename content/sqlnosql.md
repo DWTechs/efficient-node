@@ -32,16 +32,36 @@ noSQL strutures generally fit into one of those categories :
 
 For the kind of projects we usually work on SQL should be the default choice. From that we can study NoSQL solutions to assess their benefits and drawbacks compared to SQL.
 
-Here is a list of cases where NoSQL might be overkill : 
+# When to use
+
+Generally, NoSQL is preferred for:
+
+- Graph or hierarchical data
+- Data sets which are both large and mutate significantly,
+- Businesses growing extremely fast but lacking data schemata.
+
+In terms of use cases, this might translate to social networks, online content management, streaming analytics, or mobile applications (ie : gigantic applications).
+
+RDBMs is more appropriate when the data is:
+
+- Small
+- Conceptually modeled as tabular
+- In systems where consistency is critical
+
+SQL remains the best solution for small business accounting systems, sales databases, or transactional systems like payment processing in e-commerce. When in doubt, SQL is also more appropriate, as RDBMSs are better supported and fault-tolerant.
+
+
+Since we mostly deal with small to medium data sets here is a list of criterias where NoSQL might be overkill : 
 
 - **Structure**: Do not consider NoSQL if unstructured data does not work for your microservice (ie: you need consistency, integrity, no redundancy...). In the type of project we develop, we rarely deal with unstructured data. In order to support reliability and consistency features in NoSQL, developers must implement their own code, which adds more complexity to the system.
 - **Size**: Do not consider NoSQL for small datasets of only several thousands lines. Unless a NoSQL solution has already been impemented in the project.
-- **Respone Time**: Do not consider NoSQL if you do not have specific high performance constraints. Unless a NoSQL solution has already been impemented in the project.
-- **Access frequency**: Do not consider NoSQL if your web service does not need high frequency access to the data. Unless a NoSQL solution has already been impemented in the project.
+- **Respone Time**: Do not consider NoSQL if you do not have specific high performance constraints. SQL with the right structure and indexes will be very good. Unless a NoSQL solution has already been impemented in the project.
+- **Access frequency**: Do not consider NoSQL if your web service does not need high frequency access to the data. SQL with the right structure and indexes will be very good. Unless a NoSQL solution has already been impemented in the project.
 - **Scaling**: Do not consider NoSQL if your web service does not need horizontal scaling. 
-- **Weight**: SQL is usually lighter as NoSQL takes more space.
+- **Weight**: SQL is usually lighter as NoSQL takes more space because of redundancy.
 
 *Keep in mind these rules are highly opinionated and represent our strategy. They do not mean NoSQL is necessarily bad in those situations.*
+
 
 # Performances
 
@@ -103,37 +123,18 @@ Note that each NoSQL databases handle scaling differently. So it is necessary to
 
 # Into the cloud
 
-Modern brands emphasize interactivity between end-users, justifying decentralized, cloud-based architectures, and exposing diverse, new data needing representation. Enter NoSQL, champion of massive, distributed, and morphing data.
+Modern brands emphasize interactivity between end-users, justifying decentralized, cloud-based architectures, and exposing diverse new data needing representation. Enter NoSQL, champion of massive, distributed, and morphing data.
 
-But if this non-relational interest caused traditional RDBMSs to flag at all, they are now resurging. SQL remains more accessible, understandable, and most-importantly **"the good enough" solution in many many cases**.
+But if this non-relational interest caused traditional RDBMSs to flag at all, they are now resurging. SQL remains more accessible, understandable, and most-importantly **"the good enough" solution in most cases**.
 
 NoSQL increasingly represents a set of technologies with generalist applicability and inclusiveness. Traditional SQL solutions are also rebranding as generalized databases and connecting with NoSQL. Clearly both paradigms remain equally valid in the modern transition to the cloud.
 
-# When to use
 
-Generally, NoSQL is preferred for:
-
-- Graph or hierarchical data
-- Data sets which are both large and mutate significantly,
-- Businesses growing extremely fast but lacking data schemata.
-
-In terms of use cases, this might translate to social networks, online content management, streaming analytics, or mobile applications (ie : gigantic applications).
-
-RDBMs is more appropriate when the data is:
-
-- Small
-- Conceptually modeled as tabular
-- In systems where consistency is critical
-
-SQL remains the best solution for small business accounting systems, sales databases, or transactional systems like payment processing in e-commerce. When in doubt, SQL is also more appropriate, as RDBMSs are better supported and fault-tolerant.
-
-
-# business ROI.
+# Conclusion 
 
 SQL is old and sometimes constraining, but also time-tested and increasingly considered a universal interface for data analysis. NoSQL databases are new and flexible, but lack maturity and require user specialization. Pragmatically both models are useful and even growing together.
 
 Ultimately, a technology is only valuable when it serves your business (ie with increased ROI). Even companies like Google, with resources to innovate ad-hoc NoSQL systems from scratch, have found that SQL provided additional value and restored it within critical systems.
 
-# Conclusion 
-
 As usual, do not over-achitecture your project. An objective analysis with weighted criterias will help to make the good decision.
+SQL is still relevant in most situations.
