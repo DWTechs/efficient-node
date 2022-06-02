@@ -30,6 +30,8 @@ main:
         ref: "rest/versioning"
   - name: Microservices
     ref: "microservices"
+  - name: SQL vs NoSQL
+    ref: sqlnosql
   - name: Swagger
     ref: "swagger"
   
