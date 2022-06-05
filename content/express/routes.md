@@ -269,7 +269,7 @@ app.route('/book')
   .post(function (req, res) {
     res.send('Add a book');
   })
-  .put(function (req, res) {
+  .patch(function (req, res) {
     res.send('Update the book');
   })
 ```
