@@ -2,7 +2,7 @@
 title: SQL or NoSQL
 ---
 
-When developping a microservice API, in most cases you will need to store data in a database.
+When developing a microservice API, in most cases you will need to store data in a database.
 The great thing about microservice architecture is that you have one database per microservice, meaning you can pick the best system for each one of them.
 
 # Differences between SQL & NoSQL
@@ -30,7 +30,7 @@ noSQL strutures generally fit into one of those categories :
 
 **NoSQL trades consistency for performance and scalability.**
 
-Working with these new structures will entirely change the way of developping your microservice in order to be really efficient.
+Working with these new structures will entirely change the way of developing your microservice in order to be really efficient.
 
 # When to use
 
@@ -73,7 +73,7 @@ In addition, each change in the table, like adding a column or changing an exist
 
 On the other hand, with NoSQL databases, you don’t need to define a schema to start storing and retrieving data. if the data changes due to business requirements, you can just go ahead and store the data in the new format without restructuring your schema. This is a major advantage of NoSQL databases.
 
-However, because the data is unstructured and mostly unverified before it enters the database, different structures of the same data can exist. Malformed or incorrect data can be inserted and saved. Meaning reliability and consistency features will have to be architected and developped by the team, which adds more complexity to the system. The controllers will also need extra care to be able to handle different cases of data to correctly feed the views.
+However, because the data is unstructured and mostly unverified before it enters the database, different structures of the same data can exist. Malformed or incorrect data can be inserted and saved. Meaning reliability and consistency features will have to be architected and developed by the team, which adds more complexity to the system. The controllers will also need extra care to be able to handle different cases of data to correctly feed the views.
 
 # Read / Write
 
