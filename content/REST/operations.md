@@ -35,5 +35,4 @@ Another example (books):
 
 ---
 
-More information and example on [this link](https://docs.microsoft.com/en-gb/azure/architecture/best-practices/api-design)
 
